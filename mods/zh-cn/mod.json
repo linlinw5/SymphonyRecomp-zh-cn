@@ -1,9 +1,9 @@
 {
   "id": "zh-cn",
   "name": "简体中文：区域名、标题画面与拾取提示",
-  "version": "1.4",
+  "version": "1.5",
   "author": "sotn-zh",
-  "description": "Companion of the zh-cn translation pack: Chinese area names and the title screen's \"PRESS START BUTTON\" (rewritten in VRAM), and the \"Obtained\" pickup prefix.",
+  "description": "Companion of the zh-cn translation pack: Chinese area names and the title screen's \"PRESS START BUTTON\" (rewritten in VRAM), the \"Obtained\" pickup prefix, and the familiar list's rows left in kana by the US build.",
   "defaultEnabled": true,
   "dependencies": []
 }

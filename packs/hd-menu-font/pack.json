@@ -1,0 +1,8 @@
+{
+  "formatVersion": 1,
+  "id": "hd-menu-font",
+  "name": "HD menu font",
+  "version": "1.0",
+  "author": "sotn-zh",
+  "description": "The 8x8 menu font redrawn at 4x (JetBrains Mono Bold, widened), in every palette the menus use."
+}

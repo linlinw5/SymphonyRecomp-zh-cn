@@ -46,12 +46,31 @@ public class ZhCnMod : IMod
     private static readonly byte[] ObtainedUs = System.Text.Encoding.ASCII.GetBytes("Obtained ");
     private static readonly byte[] ObtainedZh = { 0x93, 0xBE, 0x93, 0x9E, 0x20, 0x00 };
 
+    // --- familiar list rows left in Japanese kana in the US build (DRA), set to English like the other
+    // rows. Written only over the US kana, so a pack that translates them (menuChinese) takes precedence.
+    // 8x8 menu glyphs: ASCII - 0x20, then FF 00; each string has an 8-byte slot.
+    private static byte[] Glyph8(string t)
+    {
+        var b = new byte[t.Length + 2];
+        for (int i = 0; i < t.Length; i++) b[i] = (byte)(t[i] - 0x20);
+        b[t.Length] = 0xFF;
+        return b;
+    }
+    private static readonly (uint Address, byte[] Us, byte[] New)[] Familiars =
+    {
+        (0x800DFD54, Convert.FromHexString("CAC5B1B8CFFF00"), Glyph8("Devil")),   // はなあくま (Nose Devil)
+        (0x800DFD5C, Convert.FromHexString("D6B3BEB2FF00"), Glyph8("Sprite")),    // ようせい
+        (0x800DFD90, Convert.FromHexString("B9B2B9DDC1FF00"), Glyph8("EXP")),     // けいけんち
+        (0x800DFD98, Convert.FromHexString("DACDFF9ED9FF00"), Glyph8("LEVEL")),   // れべる
+    };
+
     public void OnLoad() => Event.AddListener<VSyncEvent>(OnVSync);
     public void OnUnload() => Event.RemoveListener<VSyncEvent>(OnVSync);
 
     private static void OnVSync(VSyncEvent e)
     {
         PatchObtained();
+        PatchFamiliars();
         var gpu = RecompOne.Runtime.Runtime.Gpu;
         if (gpu == null) return;
         ReplaceAreaName(gpu);
@@ -82,6 +101,19 @@ public class ZhCnMod : IMod
             for (int i = 0; i < ObtainedUs.Length && match; i++) match = m.ReadU8(a + (uint)i) == ObtainedUs[i];
             if (!match) continue;
             for (int i = 0; i < ObtainedZh.Length; i++) m.WriteU8(a + (uint)i, ObtainedZh[i]);
+        }
+    }
+
+    private static void PatchFamiliars()
+    {
+        var m = RecompOne.Runtime.Runtime.Mem;
+        if (m == null) return;
+        foreach (var (a, us, en) in Familiars)
+        {
+            bool match = true;
+            for (int i = 0; i < us.Length && match; i++) match = m.ReadU8(a + (uint)i) == us[i];
+            if (!match) continue;
+            for (int i = 0; i < en.Length; i++) m.WriteU8(a + (uint)i, en[i]);
         }
     }
 

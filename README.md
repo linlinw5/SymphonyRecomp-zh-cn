@@ -1,7 +1,7 @@
 # 恶魔城X 月下夜想曲 简体中文包（SymphonyRecomp）
 
 [SymphonyRecomp](https://github.com/BlackLabelHQ/SymphonyRecomp)（PS1 美版《恶魔城X 月下夜想曲》重编译版）
-配套简体中文包：在美版基础上，把说明、图鉴、系统提示、过场对白和主要菜单换成中文。
+配套简体中文包：在美版基础上，把说明、图鉴、系统提示和过场对白换成中文，并附带一个高清菜单字体。
 
 这是第三方制作的中文包，与 BlackLabelHQ 无关；使用中遇到中文包的问题，请在本仓库提 issue。
 
@@ -9,22 +9,20 @@
 
 | 目录                 | 作用                                                                                                                                                             |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `translations/zh-cn` | **中文语言包**：主菜单，装备画面的武器分类，必杀技 / 使魔列表的标题和使魔名，道具、饰品、魔导器、魔法的说明，魔导器名和魔法名，魔物图鉴，存档、文件选择、设置菜单的提示，门上的提示，拾取提示「得到」，以及全部 19 段过场对白；另带开场字幕卡「重返 1792 年」和序章关卡标题「最终关：『血脉』」的替换贴图（`textures/`，选中文时自动加载） |
-| `mods/zh-cn`         | **中文 mod**：进入新区域时的区域名（中文 + 英文对照）、标题画面的「请按开始键」，以及各区域的拾取提示「得到」 |
+| `translations/zh-cn` | **中文语言包**：道具、饰品、魔导器、魔法的说明，魔导器名和魔法名，魔物图鉴，存档、文件选择、设置菜单的提示，门上的提示，拾取提示「得到」，以及全部 19 段过场对白；另带开场字幕卡「重返 1792 年」和序章关卡标题「最终关：『血脉』」的替换贴图（`textures/`，选中文时自动加载） |
+| `mods/zh-cn`         | **中文 mod**：进入新区域时的区域名（中文 + 英文对照）、标题画面的「请按开始键」、各区域的拾取提示「得到」，以及使魔列表里美版遗留的日文（改为英文） |
+| `packs/hd-menu-font` | **高清菜单字体**（贴图包）：菜单、道具名等用的 8×8 小字体换成 4 倍分辨率的英文字体，保留原来的各种颜色（包括不可用时的暗色）；与语言无关，英文模式下也有效 |
 
-保持英文的部分（有意为之）：「设置」菜单、装备部位名（Right hand、Head 等）、状态栏缩写（STR、HP、EXP 等）、
-计时挑战列表、道具 / 敌人 / 饰品的名字、人名标签、序章滚动字幕、片尾字幕和其余图片文字。配音是美版英文原声。
-
-菜单和名字用的是游戏自带的 8×8 小字体，它的字形表只有 256 格，中文包借用其中美版不用的假名格子画汉字，
-所以只翻译了最常用的菜单。游戏里有几处文字是共用的，因此：魔物图鉴里「蝙蝠」「幽灵」「盾」三个敌人名
-也显示中文（与使魔名、武器分类共用）；按键设置里的 Bat 显示为「蝙蝠」；使魔「Sword」和武器分类「Sword」都译作「剑」。
+保持英文的部分（有意为之）：菜单、道具 / 敌人 / 饰品的名字（游戏用 8×8 小字体显示，配合高清菜单字体）、人名标签、
+序章滚动字幕、片尾字幕和其余图片文字。配音是美版英文原声。
 
 ## 安装
 
 1. 准备好 SymphonyRecomp（[官方发布页](https://github.com/BlackLabelHQ/SymphonyRecomp/releases)，或自行编译）和合法拥有的北美版 PS1 光盘。
-2. 把本仓库的 `translations/zh-cn` 复制到游戏目录的 `translations/` 下，把 `mods/zh-cn` 复制到游戏目录的 `mods/` 下。
-   游戏目录就是 `sotn.exe` 所在的目录；`translations/` 没有的话游戏首次启动会自动创建，`mods/` 没有就手动建一个。
-3. 启动游戏，在 设置 → 语言 → 游戏语言 里选「简体中文」。mod 默认启用，可在「模组」菜单里查看和开关。
+2. 把本仓库的 `translations/zh-cn` 复制到游戏目录的 `translations/` 下，`mods/zh-cn` 复制到 `mods/` 下，
+   `packs/hd-menu-font` 复制到 `packs/` 下。游戏目录就是 `sotn.exe` 所在的目录；这几个文件夹没有的话手动建一个
+   （`translations/`、`packs/` 游戏首次启动也会自动创建）。高清菜单字体是可选的，不想要就不复制。
+3. 启动游戏，在 设置 → 语言 → 游戏语言 里选「简体中文」。mod 和贴图包都默认启用，mod 可在「模组」菜单里查看和开关。
 
 适用版本：SymphonyRecomp pre-release 1.2.0（提交 `fb0520e`）。语言包按游戏数据的位置制作，SymphonyRecomp 更新后
 如有部分文字对不上，请提 issue。
@@ -83,6 +81,7 @@ sed -i 's/"top:cutscene_data":{\([^}]*\)"base":"2149056512","loadOffset":"0"/"to
   - 中文字形：[GNU Unifont](https://unifoundry.com/unifont/) 16.0.04（SIL OFL 1.1，见 `translations/zh-cn/LICENSE-unifont.txt`）。
   - 对白里的省略号、标题画面的「请按开始键」：[Fusion Pixel Font](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1，见 `translations/zh-cn/LICENSE-font.txt`）。
   - 开场字幕卡、序章关卡标题：[霞鹜文楷 LXGW WenKai](https://github.com/lxgw/LxgwWenKai)（SIL OFL 1.1）。
+  - 高清菜单字体：[JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) Bold，横向拉宽（SIL OFL 1.1，见 `packs/hd-menu-font/LICENSE-JetBrainsMono.txt`）。
   - 区域名下方的英文：[EB Garamond](https://github.com/octaviopardo/EBGaramond12)（SIL OFL 1.1）。
   - `translations/zh-cn/fonts/bios-font`：RecompOne 自带的公有领域日文字库（由东云 16 点阵字体生成，见其中的
     `FONT_LICENSE.md`），原样复制，用于设定对白行距和显示英文、标点。
