@@ -1,9 +1,10 @@
-Chinese glyphs: GNU Unifont 16.0.04 (https://unifoundry.com/unifont/), 16x16 glyphs reduced to 16x15.
-Unifont fonts are licensed under the SIL Open Font License 1.1 (below) and the GNU GPL 2+ with the
-GNU font embedding exception.
+Copyright (c) 2025-2026, Astro_2539 (https://github.com/Astro-2539), 
+with Reserved Font Name "Z工坊" and "ZLabs".
 
-The SIL Open Font License version 1.1 is copied below, and is also
-available with a FAQ at http://scripts.sil.org/OFL.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+https://openfontlicense.org
 
 
 -----------------------------------------------------------
@@ -19,7 +20,7 @@ with others.
 
 The OFL allows the licensed fonts to be used, studied, modified and
 redistributed freely as long as they are not sold by themselves. The
-fonts, including any derivative works, can be bundled, embedded, 
+fonts, including any derivative works, can be bundled, embedded,
 redistributed and/or sold with any software provided that any reserved
 names are not used by derivative works. The fonts and derivatives,
 however, cannot be released under any other type of license. The

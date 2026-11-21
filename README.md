@@ -70,7 +70,7 @@ sed -i 's/"top:cutscene_data":{\([^}]*\)"base":"2149056512","loadOffset":"0"/"to
 说明和图鉴的部分译文沿用了民间流传的 PS1 中文版（与美版英文意思一致的条目）。这个中文版可以追溯到约 20 多年前论坛上
 流传的《月下夜想曲》半汉化（配合中文 BIOS 使用的日版镜像），原作者已不可考。
 
-**中文字形**：游戏内文字全部用开源的 [GNU Unifont](https://unifoundry.com/unifont/)（16×16 点阵，压成游戏使用的 16×15），
+**中文字形**：游戏内文字和区域名全部用开源的 [Z工坊像素圆体 16px（ZLabs RoundPix 16px）](https://github.com/Astro-2539/ZLabs-RoundPix-16px)（16×16 点阵，压成游戏使用的 16×15），
 图片文字也都用开源字体绘制，不含民间中文版或其他来源不明的字库。
 
 ## 致谢
@@ -78,7 +78,8 @@ sed -i 's/"top:cutscene_data":{\([^}]*\)"base":"2149056512","loadOffset":"0"/"to
 - [BlackLabelHQ](https://github.com/BlackLabelHQ) 的 SymphonyRecomp 与 RecompOne，以及其中的翻译框架和 mod 支持。
 - 当年论坛里汉化《月下夜想曲》的前辈们，以及之后所有做过勘误、整理的朋友。原作者已不可考，谨此致谢。
 - 字体：
-  - 中文字形：[GNU Unifont](https://unifoundry.com/unifont/) 16.0.04（SIL OFL 1.1，见 `translations/zh-cn/LICENSE-unifont.txt`）。
+  - 中文字形、区域名的中文：[Z工坊像素圆体 16px（ZLabs RoundPix 16px）](https://github.com/Astro-2539/ZLabs-RoundPix-16px)，Astro_2539 制作（SIL OFL 1.1，
+    见 `translations/zh-cn/LICENSE-font16.txt`）。语言包里是转换成点阵后的衍生版本，按许可不沿用原字体名。
   - 对白里的省略号、标题画面的「请按开始键」：[Fusion Pixel Font](https://github.com/TakWolf/fusion-pixel-font)（SIL OFL 1.1，见 `translations/zh-cn/LICENSE-font.txt`）。
   - 开场字幕卡、序章关卡标题：[霞鹜文楷 LXGW WenKai](https://github.com/lxgw/LxgwWenKai)（SIL OFL 1.1）。
   - 高清菜单字体：[JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) Bold，横向拉宽（SIL OFL 1.1，见 `packs/hd-menu-font/LICENSE-JetBrainsMono.txt`）。
